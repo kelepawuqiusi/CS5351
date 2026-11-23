@@ -1,0 +1,29 @@
+{
+  "source": "rollout-2026-11-23T00-03-43-01a1f87a-64d8-7530-9b8d-1dc3066eabf0_01a203ff-c468-7120-8c6d-822fd47f1a0d.jsonl",
+  "source_snapshot_sha256": "3428eec94fe108d35bdb9d1126101c26f5ca0096b8abb774081a27596041eff1",
+  "source_snapshot_bytes": 7712638,
+  "export": "2026-11-23_test-approval-gate-review-and-fixes.md",
+  "export_sha256": "fce0aebbd5e04a3b8454e41732cb82e64aa0d4062588e2f10dece4f798aafc50",
+  "user_text_sha256": [
+    "29f9fa71e30e53c9b95aab939ef8fd42e4010270543551f34067fda8e6e5510c"
+  ],
+  "displayed_record_lines": [
+    1104,
+    1107,
+    1152,
+    1215,
+    1264
+  ],
+  "user_messages": 1,
+  "assistant_messages": 4,
+  "scope": "Current review/fix turn, before final reply; tool/write payloads and reasoning omitted.",
+  "verification": {
+    "regression_passed": 1762,
+    "skipped": 2,
+    "deselected": 1,
+    "subtests_passed": 100,
+    "new_gate_tests_passed": 23,
+    "ruff": "passed",
+    "github_execution": "not run"
+  }
+}

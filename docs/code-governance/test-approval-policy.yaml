@@ -1,0 +1,79 @@
+# Feature approvals and governance reviews use different lists. Both were
+# confirmed by Member E on 2026-11-23. Filling them does not break self-tests.
+# A pull request cannot grant approval by editing this file: the checker loads
+# the protected baseline, not the pull request copy.
+#
+# Gate files (this policy, the verifier, and workflows) are not cleared by
+# /approve-tests. They need /approve-governance from someone already on
+# governance_reviewers, and that pull request cannot also change implementation
+# or tests. Put the first governance reviewer on the default branch before an
+# admin requires the "test approval" check. After that, later gate edits use
+# the governance command; they do not need the check to be turned off.
+#
+# Historical work merged before this gate is an evidence gap. Do not backfill
+# approvals for it.
+
+schema_version: "1"
+roster_confirmed: true
+approvers:
+  - github_login: "kelepawuqiusi"
+    name: "kelepawuqiusi"
+    role: "E"
+
+# Paths whose changes are feature implementation. They must appear only after
+# the test approval commit.
+implementation_prefixes:
+  - "tradingagents/"
+  - "cli/"
+  - "prompts/"
+implementation_files:
+  - "main.py"
+  - "pyproject.toml"
+  - "requirements.txt"
+  - "AGENTS.md"
+  - ".opencode/permissions.jsonc"
+
+# Tests and verification code also need a plan. They are not a blanket exemption.
+test_prefixes:
+  - "tests/"
+  - "scripts/"
+
+# Changes here cannot be cleared by a feature test approval.
+governance_prefixes:
+  - ".github/workflows/"
+governance_files:
+  - "docs/code-governance/test-approval-policy.yaml"
+  - "scripts/ci/check_test_approval.py"
+
+not_applicable_prefixes:
+  - "docs/"
+  - "AI-log/"
+  - "results/"
+not_applicable_files:
+  - "README.md"
+  - "CHANGELOG.md"
+  - "LICENSE"
+
+not_applicable_suffixes:
+  - ".png"
+  - ".jpg"
+  - ".jpeg"
+  - ".gif"
+  - ".svg"
+  - ".webp"
+
+plan_prefix: "docs/verification/plans/"
+approval_prefix: "docs/verification/approvals/"
+trusted_workflow: ".github/workflows/test-approval.yml"
+approve_command: "/approve-tests"
+revoke_command: "/revoke-tests"
+
+# Reviewers who may approve a change to this policy, the verifier, or workflows.
+# This list is distinct from the feature-test roster. Both currently contain
+# the same user-confirmed account; self-approval remains forbidden.
+governance_roster_confirmed: true
+governance_reviewers:
+  - github_login: "kelepawuqiusi"
+    name: "kelepawuqiusi"
+    role: "E"
+governance_command: "/approve-governance"

@@ -311,6 +311,21 @@ install verification, Lint, dependency check, and AI-log update; they are not
 four workflow jobs. **E7 and E10** remain blocked (A schema / permission design) and
 must not be faked as passing. The type-check half of E6 is not installed.
 Live model semantic acceptance is not one of the four default gates.
+Test approval is a separate check, `test approval`, implemented by
+`.github/workflows/test-approval.yml`. It reads the protected baseline policy
+and verifier, and it does not backfill or retrospectively verify work merged
+before the gate existed. A feature approval cannot clear a change to that
+policy, the verifier, or a workflow. Those gate edits need
+`/approve-governance <full SHA>` from a reviewer already listed on the
+baseline, in a pull request that does not also change implementation or tests.
+Member E confirmed `kelepawuqiusi` for both rosters on 2026-11-23.
+Self-approval remains forbidden. Put this confirmed policy on the default
+branch before an admin requires the check; after the first governance reviewer is on that branch,
+later gate edits use the governance command.
+The receipt producer leaves its check in progress. A separate protected
+`test-approval-complete.yml` workflow verifies its successful completion,
+retained receipt and current PR before publishing success. Failed or cancelled
+producers cannot be used as approval; unavailable evidence fails closed.
 
 The dependency job checks the installed project's declared requirements with
 `pip check`, then uninstalls only the local `tradingagents` distribution before

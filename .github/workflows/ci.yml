@@ -8,6 +8,12 @@ name: CI
 # are not a separate gate. Live model semantic acceptance is not included in
 # these four default gates.
 #
+# Test approval is a separate check named "test approval". Its workflow is
+# .github/workflows/test-approval.yml, which reads the protected baseline copy
+# of the policy and verifier and does not execute pull request code. A change
+# to the policy, verifier, or workflows is not cleared by a feature test
+# approval; it needs /approve-governance from a baseline governance reviewer.
+#
 # After these check names have appeared on a GitHub run, an admin can require
 # exactly: required tests; ruff (strict, full repo); dependency check; ai-log updated.
 # "required tests" passes only when its upstream jobs succeeded. A failed,

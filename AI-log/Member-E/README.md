@@ -19,3 +19,7 @@ The following original-language extracts preserve all selected user questions an
 - [CI source and integrity index](transcript-index-2026-11-22-23-ci.json) — source snapshots, selected record lines, user-message hashes and exported-file hashes.
 
 - [2026-11-23_CI-dependency-audit-follow-up.md](2026-11-23_CI-dependency-audit-follow-up.md) — original screenshot question and public replies for the first real CI audit failure; local project distribution is removed only after checking its declared requirements.
+
+- [2026-11-23_test-approval-gate-review-and-fixes.md](2026-11-23_test-approval-gate-review-and-fixes.md) — original request/public replies, file-length summary and verification for the test-approval gate corrections; [integrity index](transcript-index-2026-11-23-test-approval.json).
+
+- [2026-11-23_test-approval-gate-deployment.md](2026-11-23_test-approval-gate-deployment.md) — deployment request, confirmed reviewer account, bootstrap scope and self-approval limitation.
