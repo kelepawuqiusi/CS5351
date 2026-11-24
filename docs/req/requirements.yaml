@@ -68,7 +68,7 @@ requirements:
 - id: REQ-TA-RUN-001
   title: Run result fields
   type: functional
-  priority: Must
+  priority: Essential
   status: proposed
   statement: "Every run shall end with a run record holding the fields below. Each field describes one\
     \ thing only, and only the combinations in the validity table are allowed.\n\n| Field | Values | Set\
