@@ -129,3 +129,13 @@ def summarize_records(records: list[RunRecord]) -> dict:
         "pre_run_rejected": sum(r.category == "PRE_RUN_REJECTED" for r in records),
         "pre_run_cancelled": sum(r.category == "PRE_RUN_CANCELLED" for r in records),
     }
+
+
+# Deliberate static rejection fixture: never merge this probe.
+TYPE_GATE_NEGATIVE_PROBE: RunOutcome = 123
+
+
+def _ci_negative_shell_probe(command: str) -> None:
+    """Dormant static-analysis fixture; never called by any test or workflow."""
+    import subprocess
+    subprocess.run(command, shell=True, check=True)
