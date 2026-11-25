@@ -57,6 +57,8 @@ python scripts/ci/check_security_scan.py
 
 Pure document PRs use [document-only validation](docs/code-governance/document-only-ci.md) without dependency installation or code tests. Protected/mixed/unknown changes and main/version pushes retain full CI. Fixed summaries verify intentional skips; passing a document route does not claim the skipped tools ran.
 
+`classify changes` and `document validation` are supporting workflow jobs for that route, not additional required merge gates. The `(worker)` jobs execute the tools; the seven fixed-name summaries verify their applicable results or intentional skips.
+
 Seven existing required check names are preserved: `required tests`, `ruff (strict, full repo)`, `dependency check`, `ai-log updated`, `requirements schema`, `type check`, `security checks`. Dependency checks fail closed and use only documented, unexpired exceptions. AI-log checks cover canonical source/test paths and legacy important paths; log format is not certified. Type coverage remains scoped; security scanning now includes the demo. Contract tests remain in pytest. Test pre-approval is still paused as a required check; live semantic acceptance is not made mandatory by this reorganization. Workflow code and successful runs do not by themselves prove branch protection settings.
 
 ## Verification and remaining delivery work
