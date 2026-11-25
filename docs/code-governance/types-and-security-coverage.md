@@ -2,9 +2,9 @@
 
 Date: 2026-11-25 (Asia/Hong_Kong). Test-plan pre-approval remains paused as a required check. These checks do not restore it.
 
-## Checks to require after successful GitHub validation
+## Current required checks and execution routes
 
-The seven configured names are `required tests`, `ruff (strict, full repo)`, `dependency check`, `ai-log updated`, `requirements schema`, `type check` and `security checks`. All run on every PR, including renames and changes outside the safety paths. Static-analysis checks are separate jobs, not extra application stages. The six course gate categories must not be inferred by counting workflow jobs or check names.
+The seven configured names are `required tests`, `ruff (strict, full repo)`, `dependency check`, `ai-log updated`, `requirements schema`, `type check` and `security checks`. All seven fixed-name summaries report on every PR. Their tools actually run on the full route (protected/mixed/unknown changes and main/version pushes). Pure-document PRs instead require successful classification and document validation, with exactly intentional skips for full-only workers; no package installation, audit, type scan or code-test execution is claimed from that route. See [document-only CI](document-only-ci.md). `classify changes` and `document validation` are supporting jobs, not additional required gates. Static-analysis workers are not extra application stages. The six course gate categories must not be inferred by counting workflow jobs or check names.
 
 ## Type coverage
 
@@ -40,7 +40,7 @@ The scanner also has a real planted shell-injection fixture, and report probes r
 - Privileged comment/workflow-run/target jobs must explicitly check out this repository's trusted default branch. A PR-head checkout, foreign-repository checkout or direct event-expression interpolation into shell code is rejected. Existing receipt workflows retain only their necessary check/comment write scopes.
 - Discovery/symlink exclusions, explicit consent, immutable selected input, staging path protections, redaction, sink privacy and terminal visibility are covered by Member C, Member D and Member B offline regressions. Explicit user-selected external portfolio paths remain supported; they are not confused with automatic directory discovery.
 
-**Not deployed:** OpenCode A/B/C/D/E role-specific file ACLs, OS-level sandboxing and enforcement of human-only coding-agent writes. The architecture currently describes these as design intent; no `.opencode` permission package exists. The new CI permission checks are not a substitute for that mechanism and do not claim it is installed. They also do not make PR-controlled workflow code tamper-proof against an authorized member deliberately weakening CI. Pre-approval and live semantic acceptance remain separate.
+**Permission scope:** a local role-permission package now exists; use the [current activation and evidence guide](opencode-permissions.md). Its recorded native probes remain tied to their original revisions, and later path updates are not fresh per-member acceptance. CI token checks do not establish OS-level isolation or universal enforcement of human-only writes. They also do not make PR-controlled workflow code tamper-proof against an authorized member deliberately weakening CI. Pre-approval and live semantic acceptance remain separate.
 
 ## Reproduce
 

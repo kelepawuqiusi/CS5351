@@ -14,6 +14,12 @@ Updated 2026-11-25. [Entry point](../verification/README.md) · [Strategy](../ve
 
 C owns criteria/evidence; E integration, A requirement meaning, B design and D implementation. These qualifications supersede conflicting present-tense/PASS language below without altering historical observations.
 
+## Current CI execution supplement — 25 November 2026
+
+Main retains seven required names: `required tests`, `ruff (strict, full repo)`, `dependency check`, `ai-log updated`, `requirements schema`, `type check` and `security checks`. These are fixed summaries, not a count of course gate categories or workflow jobs. Full-route workers run the existing checks for protected/mixed/unknown changes and main/version pushes. Pure-document PRs instead require successful classification/document validation and exactly intentional worker skips, without project installation or code tests. `classify changes` and `document validation` are supporting jobs, not additional required merge gates. See [current route definition](document-only-ci.md).
+
+The archived four-category descriptions, every-commit execution claims, missing-schema/type statements and historical acceptance claims below are preserved observations, not the current deployment state. This supplement records E's deployed CI behavior; it does not change C's independent acceptance criteria or A's formal requirement meaning. Pre-approval remains paused and live semantic acceptance remains separate.
+
 ## Historical constraints archive
 
 <details>

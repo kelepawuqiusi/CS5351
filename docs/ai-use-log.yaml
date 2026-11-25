@@ -45,7 +45,7 @@ members:
   coverage: available_selected_records; contributor_confirmation_pending
   directory: AI-log/Member-D/
 - member: E
-  records: 43
+  records: 44
   provenance_indexes: 4
   coverage: available_selected_records; contributor_confirmation_pending
   directory: AI-log/Member-E/
@@ -528,6 +528,13 @@ source_records:
   record_date: '2026-11-25'
   date_basis: current authorized CI change
   sha256: c45b0500235f4d45d9d49f23b5bb38d6d172715ca9eb624abc909407f2e48a07
+- id: E-48
+  member: E
+  path: AI-log/Member-E/2026-11-25-ci-description-alignment.md
+  kind: ai_use_record
+  record_date: '2026-11-25'
+  date_basis: current documentation alignment and publication request
+  sha256: ef0b5cd40aad9c25b3cca7e38c726cc3b44da547004f15c83f1290c3d2105e96
 events:
 - id: B-REVIEW
   member: B
@@ -1529,6 +1536,24 @@ events:
   - path: docs/code-governance/document-only-ci.md
     availability: present
     purpose: CI routing implementation or coverage
+- id: E-CI-DESCRIPTION-ALIGNMENT
+  member: E
+  title: Align deployed CI descriptions without transcript fabrication
+  source_records:
+  - E-48
+  task: Reconcile seven fixed checks, worker execution and supporting document routing jobs.
+  intervention: User requested consistency review, then publication excluding annotated transcripts and skipping
+    further checks.
+  changes: Updated current operational/governance descriptions; preserved archived observations; no workflow or
+    report edits.
+  verification:
+    basis: prior read-only workflow/protection/document comparison
+    summary: No local tests or hosted polling performed for this publication.
+  limitations: Automatic GitHub CI may run; no checks bypassed, no owner adoption or transcript completion claimed.
+  artifacts:
+  - path: docs/code-governance/document-only-ci.md
+    availability: present
+    purpose: unchanged routing reference
 outstanding_records:
 - id: G-A
   owner: A
@@ -1591,12 +1616,12 @@ integrity:
   archive_policy: Nine obsolete/duplicate untracked files retained under ignored local archive with original hashes;
     not delivered as current rules/tests. No original historical AI excerpt deleted.
   current_counts:
-    source_records: 67
-    events: 42
+    source_records: 68
+    events: 43
 integration_refresh:
   date: '2026-11-25'
-  source_records: 67
-  events: 42
+  source_records: 68
+  events: 43
   remote_baseline: f103e4e
   new_delivery_status: Five identities, user-confirmed contributions and five original reflections integrated in
     Report.md/PDF. D5 collection and independent technical acceptance remain separate.
